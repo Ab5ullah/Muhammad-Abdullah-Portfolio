@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-background: #f3f6f8;
+  --color-surface: #ffffff;
+  --color-foreground: #142433;
+  --color-muted: #4a6478;
+  --color-line: #14314a;
+  --color-line-soft: rgba(20, 49, 74, 0.14);
+  --color-grid: rgba(20, 49, 74, 0.07);
+  --color-accent: #cf3f24;
+  --color-accent-foreground: #fdf5f2;
+}
+
+.dark {
+  --color-background: #0a1929;
+  --color-surface: #0f2438;
+  --color-foreground: #e8f1f8;
+  --color-muted: #8da9c4;
+  --color-line: #7fb3d9;
+  --color-line-soft: rgba(127, 179, 217, 0.18);
+  --color-grid: rgba(127, 179, 217, 0.08);
+  --color-accent: #ff6a45;
+  --color-accent-foreground: #1a0d08;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Fine blueprint grid backdrop, used behind the hero and section dividers */
+.bg-blueprint-grid {
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-blueprint-grid-fine {
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Corner bracket hover affordance — echoes a widget-inspector selection */
+.corner-brackets .bracket-tl,
+.corner-brackets .bracket-tr,
+.corner-brackets .bracket-bl,
+.corner-brackets .bracket-br {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.corner-brackets .bracket-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+}
+.corner-brackets .bracket-tr {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid var(--color-accent);
+  border-right: 2px solid var(--color-accent);
+}
+.corner-brackets .bracket-bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+}
+.corner-brackets .bracket-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-accent);
+  border-right: 2px solid var(--color-accent);
+}
+
+.corner-brackets:hover .bracket-tl,
+.corner-brackets:hover .bracket-tr,
+.corner-brackets:hover .bracket-bl,
+.corner-brackets:hover .bracket-br,
+.corner-brackets:focus-within .bracket-tl,
+.corner-brackets:focus-within .bracket-tr,
+.corner-brackets:focus-within .bracket-bl,
+.corner-brackets:focus-within .bracket-br {
+  opacity: 1;
+  transform: scale(1);
+}
