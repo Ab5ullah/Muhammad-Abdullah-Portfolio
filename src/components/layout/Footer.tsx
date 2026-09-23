@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="border-t border-line/15">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-mono text-xs text-muted">
-          &copy; {year} {profile.name}. Built with Next.js &amp; Flutter know-how.
+          &copy; {year} {profile.name}.
         </p>
         <div className="flex items-center gap-4">
           <a

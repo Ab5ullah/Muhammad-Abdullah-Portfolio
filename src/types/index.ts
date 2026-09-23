@@ -13,6 +13,7 @@ export interface Project {
   platform: string;
   stack: string[];
   status: "live" | "in-review";
+  image?: string;
   links: StoreLink[];
 }
 

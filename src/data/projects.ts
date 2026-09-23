@@ -12,6 +12,7 @@ export const projects: Project[] = [
     platform: "iOS & Android",
     stack: ["Flutter", "Dart", "Riverpod", "Dio", "Firebase", "Moyasar payments", "Google Maps"],
     status: "live",
+    image: "/projects/one-source.webp",
     links: [
       { platform: "ios", url: "https://apps.apple.com/ca/app/one-source/id6795812747" },
       { platform: "android", url: "https://play.google.com/store/apps/details?id=com.one.source" },
@@ -28,6 +29,7 @@ export const projects: Project[] = [
     platform: "Android",
     stack: ["Flutter", "Dart", "Riverpod", "GoRouter", "Google Maps", "RTL localization"],
     status: "live",
+    image: "/projects/one-source-rider.webp",
     links: [
       { platform: "android", url: "https://play.google.com/store/apps/details?id=com.one.source.rider" },
     ],
@@ -43,19 +45,21 @@ export const projects: Project[] = [
     platform: "Android",
     stack: ["Flutter", "Riverpod", "Hive", "GoRouter", "RevenueCat"],
     status: "in-review",
+    image: "/projects/vent-box.png",
     links: [],
   },
   {
     slug: "chepaticket",
     name: "ChepaTicket",
-    tagline: "Bus and event ticket booking for Zambia",
+    tagline: "Bus and event ticket booking across Zambia with mobile money payments",
     description:
-      "An all-in-one booking platform for Zambian travelers and event-goers — search bus routes, pick seats, browse concerts and festivals, and manage every ticket from one app.",
-    role: "Joined an existing app — UI redesign & new features",
+      "Launched a complete redesign and major architectural overhaul of the mobile application. Integrated multiple backend REST APIs including the PawaPay payment gateway for seamless mobile money transactions across Zambia, engineered an interactive pinch-to-zoom bus seat booking flow, dynamic event discovery, and structured clean error handling with Riverpod and Dio.",
+    role: "Full app redesign & core API / payment integrations",
     company: "Chepa Ticket Zone",
     platform: "iOS & Android",
-    stack: ["Flutter", "Riverpod", "Dio", "Sealed error handling"],
+    stack: ["Flutter", "Riverpod", "Dio", "PawaPay", "REST APIs", "Sealed Architecture"],
     status: "live",
+    image: "/projects/chepa-ticket.webp",
     links: [
       { platform: "android", url: "https://play.google.com/store/apps/details?id=com.cheepa.tickethub" },
       { platform: "ios", url: "https://apps.apple.com/us/app/chepa-ticket/id6769854821" },
@@ -72,6 +76,7 @@ export const projects: Project[] = [
     platform: "iOS & Android",
     stack: ["Flutter", "Dart"],
     status: "live",
+    image: "/projects/iv-hub.webp",
     links: [
       { platform: "android", url: "https://play.google.com/store/apps/details?id=com.iv.hub" },
       { platform: "ios", url: "https://apps.apple.com/us/app/iv-hub/id6752780828" },
@@ -88,6 +93,7 @@ export const projects: Project[] = [
     platform: "iOS & Android",
     stack: ["Flutter", "Dart"],
     status: "live",
+    image: "/projects/iv-hub-servicer.webp",
     links: [
       { platform: "android", url: "https://play.google.com/store/apps/details?id=com.ivhub.nursingside" },
       { platform: "ios", url: "https://apps.apple.com/us/app/iv-hub-servicer/id6757314768" },
@@ -104,6 +110,7 @@ export const projects: Project[] = [
     platform: "iOS & Android",
     stack: ["Flutter", "Dart"],
     status: "live",
+    image: "/projects/jobs-shopper.webp",
     links: [
       { platform: "android", url: "https://play.google.com/store/apps/details?id=app.jobs.shopper" },
       { platform: "ios", url: "https://apps.apple.com/ml/app/jobs-shopper/id6741592250" },
